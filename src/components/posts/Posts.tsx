@@ -1,12 +1,12 @@
 'use client';
 import React, {useEffect, useState} from 'react';
-import {getFeaturedPosts, Post} from "@/service/posts/posts";
+import {Post} from "@/service/posts/posts";
 import PostCard from "@/components/postCard/PostCard";
 
-function FeaturedPosts({title}:{title:string}) {
+function Posts({title,url}:{title:string,url:string}) {
     const [featuredPost,setFeaturedPost] = useState<Post[] | undefined>();
     useEffect(() => {
-        fetch('/api/featurePosts')
+        fetch(url)
             .then(res => res.json())
             .then(data => {setFeaturedPost(data)});
     });
@@ -24,4 +24,4 @@ function FeaturedPosts({title}:{title:string}) {
     );
 }
 
-export default FeaturedPosts;
+export default Posts;
