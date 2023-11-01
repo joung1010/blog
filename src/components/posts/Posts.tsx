@@ -9,7 +9,7 @@ function Posts({title,url}:{title:string,url:string}) {
         fetch(url)
             .then(res => res.json())
             .then(data => {setFeaturedPost(data)});
-    });
+    },[]);
     return (
         <section>
             <h2 className="ml-4 text-2xl font-bold">{title}</h2>
