@@ -5,7 +5,7 @@ import ContactForm from "@/components/contract/ContactForm";
 
 function ContactPage() {
     return (
-        <section>
+        <section className='flex flex-col justify-center items-center'>
             <ContactMe/>
             <ContactForm/>
         </section>
