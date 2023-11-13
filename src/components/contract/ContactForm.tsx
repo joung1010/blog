@@ -16,7 +16,7 @@ function ContactForm() {
             alert('필수 입력 사항을 모두 입력해주세요.');
             return;
         }
-        fetch('/api/send/mail',{
+        fetch('/api/send/email',{
             method:'POST',
             headers:{
                 'Content-type': 'application/json',
@@ -24,9 +24,11 @@ function ContactForm() {
             body: JSON.stringify(send),
         })
             .then(response => response.json())
-            .then(data => {console.log(data)})
+            .then(data => {
+                console.log(data);
+            })
             .catch(error => console.error(error));
-
+        e.currentTarget.reset();
     };
 
     return (
