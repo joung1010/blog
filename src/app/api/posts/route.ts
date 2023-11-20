@@ -1,6 +1,6 @@
-import {getFeaturedPosts, getPosts} from "@/service/posts/posts";
+import {getAllPosts} from "@/service/posts/posts";
 
 export async function GET(request:Request) {
-    const posts = await getPosts();
+    const posts = await getAllPosts();
     return Response.json(posts);
 }
