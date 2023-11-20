@@ -13,21 +13,21 @@ export type Post = {
 export type Category = string;
 
 export async function getFeaturedPosts():Promise<Post[]> {
-    const posts = await getAllPosts();
+    const posts = await readPosts();
     return posts.filter(post => post.featured);
 }
 
 export async function getPosts():Promise<Post[]> {
-    const posts = await getAllPosts();
+    const posts = await readPosts();
     return posts.filter(post => !post.featured);
 }
 
-export async function getPostsCategories():Promise<Category[]> {
-    const posts = await getAllPosts();
-    return ['All Posts', ...Array.from(new Set(posts.map(category => category.category)))];
+export async function getAllPosts():Promise<Post[]> {
+    return await readPosts();
 }
 
- async function getAllPosts():Promise<Post[]> {
+
+ async function readPosts():Promise<Post[]> {
     const file = path.join(process.cwd(), 'data', 'posts.json');
     const posts =await promises.readFile(file, 'utf-8');
     return JSON.parse(posts);
