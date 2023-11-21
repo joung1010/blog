@@ -25,7 +25,9 @@ const responsive = {
         items: 1
     }
 };
-
+type Props = {
+    posts: Post[];
+}
 
 function getDevice():Device {
     const md = new MobileDetect(navigator.userAgent);
@@ -39,17 +41,9 @@ function getDevice():Device {
     }
     return deviceType;
 }
-function PostSlider() {
-    const [posts, setPosts] = useState<Post[] | undefined>();
+function PostSlider({posts}:Props) {
     const [device, setDevice] = useState<Device>();
-    useEffect(() => {
-        fetch('/api/posts')
-            .then(res => res.json())
-            .then(data => {
-                setPosts(data)
-                setDevice(getDevice());
-            });
-    },[]);
+
     return (
         <div className='my-6'>
             <h2 className="ml-4 text-2xl font-bold">You may like</h2>
