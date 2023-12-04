@@ -9,9 +9,10 @@ type Props = {
     posts: Post[];
     categories: string[];
 }
-function FilterablePosts({posts,categories}:Props) {
+
+function FilterablePosts({posts, categories}: Props) {
     const [selected, setSelected] = useState<string>(ALL_CATEGORY);
-    const [filterablePosts,setFilterablePosts] = useState<Post[]>();
+    const [filterablePosts, setFilterablePosts] = useState<Post[]>();
 
     useEffect(() => {
         if (selected !== ALL_CATEGORY) {
@@ -20,15 +21,15 @@ function FilterablePosts({posts,categories}:Props) {
             setFilterablePosts(posts);
         }
     }, [selected]);
-    const handleOnclick = (category:string) => {
+    const handleOnclick = (category: string) => {
         setSelected(category);
     };
     return (
         <section className='flex'>
-            <div className='basis-2/3'>
+            <div className='basis-4/5 w-full'>
                 <Posts posts={filterablePosts!}/>
             </div>
-            <div className='basis-1/3'>
+            <div className='basis-1/5'>
                 <PostsSideNav categories={categories} selected={selected} onClick={handleOnclick}/>
             </div>
         </section>
