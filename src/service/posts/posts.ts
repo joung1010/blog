@@ -10,7 +10,7 @@ export type Post = {
     featured: boolean;
 }
 
-export const ALL_CATEGORY = 'ALL';
+export const ALL_CATEGORY = 'All posts';
 
 export async function getFeaturedPosts():Promise<Post[]> {
     const posts = await readPosts();

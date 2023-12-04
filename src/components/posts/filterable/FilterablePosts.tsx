@@ -24,9 +24,13 @@ function FilterablePosts({posts,categories}:Props) {
         setSelected(category);
     };
     return (
-        <section>
-            <PostsSideNav categories={categories} selected={selected} onClick={handleOnclick}/>
-            <Posts posts={filterablePosts!}/>
+        <section className='flex'>
+            <div className='basis-2/3'>
+                <Posts posts={filterablePosts!}/>
+            </div>
+            <div className='basis-1/3'>
+                <PostsSideNav categories={categories} selected={selected} onClick={handleOnclick}/>
+            </div>
         </section>
     );
 }
