@@ -4,3 +4,4 @@
    1. `npm install mobile-detect`
 3. [Yup](https://github.com/jquense/yup)
 4. [nodeMailer](https://nodemailer.com/about/)
+5. [react-markdown](https://github.com/remarkjs/react-markdown)

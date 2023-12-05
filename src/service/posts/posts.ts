@@ -17,13 +17,19 @@ export async function getFeaturedPosts():Promise<Post[]> {
     return posts.filter(post => post.featured);
 }
 
-export async function getPosts():Promise<Post[]> {
+export async function getPost(path:string):Promise<Post|undefined> {
+    console.log(path);
     const posts = await readPosts();
-    return posts.filter(post => !post.featured);
+    return posts.find(post => post.path === path);
 }
 
 export async function getAllPosts():Promise<Post[]> {
     return await readPosts();
+}
+export async function readMarkDown(filePath:string) {
+    const file = path.join(process.cwd(),'data/posts',`${filePath}.md`);
+    const post =await promises.readFile(file, 'utf-8');
+    return JSON.parse(post);
 }
 
 
