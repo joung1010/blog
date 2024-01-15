@@ -2,6 +2,8 @@ import type {Metadata} from 'next'
 import {Open_Sans} from 'next/font/google'
 import './globals.css'
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const openSans = Open_Sans({subsets: ['latin']})
 
@@ -17,18 +19,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={openSans.className}>
-        <body>
-        <nav className="flex justify-between px-32 my-7">
-            <h2 className="text-3xl font-bold"><Link href="/">My Blog</Link></h2>
-            <ul className="flex gap-4 text-xl">
-                <li><Link href="/">home</Link></li>
-                <li><Link href="/about">about</Link></li>
-                <li><Link href="/posts">posts</Link></li>
-                <li><Link href="/contact">contact</Link></li>
-            </ul>
-        </nav>
-        {children}
-        </body>
+            <body>
+                <Header/>
+                <main>
+                    {children}
+                </main>
+                <Footer/>
+            </body>
         </html>
     )
 }

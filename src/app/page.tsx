@@ -8,13 +8,13 @@ export default async function Home() {
     const posts = await getAllPosts();
     const featuredPosts = posts.filter(post => post.featured);
     return (
-        <main>
+        <section>
             <Profile/>
             <section>
                 <h2 className="ml-4 text-2xl font-bold">Featured Posts</h2>
                 <FeaturedPosts posts={featuredPosts}/>
             </section>
             <PostSlider posts={posts}/>
-        </main>
+        </section>
     )
 }
