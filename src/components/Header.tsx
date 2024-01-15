@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
     return (
-        <header className="flex justify-between px-32 my-7">
+        <header className="flex justify-between items-center px-32 my-7">
             <Link href="/">
                 <h1 className="text-3xl font-bold">My Blog</h1>
             </Link>
