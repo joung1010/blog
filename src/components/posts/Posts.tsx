@@ -8,7 +8,7 @@ type Props = {
 
 function Posts({posts}: Props) {
     return (
-        <ul className="grid grid-col-1 md:grid-col-2 lg:grid-cols-3 gap-4 p-4">
+        <ul className="grid grid-col-1 sm:grid-col-2 md:grid-col-3 lg:grid-cols-4 gap-4 p-4">
             {
                 posts?.map((post, index) => (
                     <li key={post.path}
