@@ -2,22 +2,22 @@
 import React from 'react';
 import Image from "next/image";
 import profile from "../../../public/images/profile.jpg";
-import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 export default function Profile() {
-    const router = useRouter();
+    /*
+    * Image 태그 priority 속성 우선적으로 다운로드
+    * */
     return (
-        <section className="flex flex-col items-center gap-1 my-5">
-            <Image className="rounded-full"
-                src={profile} alt="profile"/>
-            <h2 className="text-3xl font-bold">Hi, Welcome to my Blog</h2>
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
-            <p className="text-2xl">I'm Mason</p>
-            <button className="font-medium bg-amber-500 py-2 px-3 rounded-xl text-center"
-                onClick={() => {router.push('/contact')}}
-            >
-                Contact Me
-            </button>
+        <section className="text-center">
+            <Image className="mx-auto rounded-full"
+                   priority
+                   src={profile} alt="profile" width={250} height={250}/>
+            <h2 className="text-3xl font-bold mt-2">Hi, Welcome to my Blog</h2>
+            <p className="text-xl font-semibold">{"I'm Mason"}</p>
+            <Link href='/contact'>
+                <button className="font-bold bg-amber-500 py-2 px-3 rounded-xl text-center mt-2">Contact Me</button>
+            </Link>
         </section>
     );
 }
