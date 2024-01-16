@@ -11,7 +11,11 @@ function Posts({posts}: Props) {
         <ul className="grid grid-col-1 md:grid-col-2 lg:grid-cols-3 gap-4 p-4">
             {
                 posts?.map((post, index) => (
-                    <PostCard key={index} post={post}/>
+                    <li key={post.path}
+                        className="rounded-lg shadow-md overflow-hidden cursor-pointer transition-all hover:scale-105"
+                    >
+                        <PostCard key={index} post={post}/>
+                    </li>
                 ))
             }
         </ul>

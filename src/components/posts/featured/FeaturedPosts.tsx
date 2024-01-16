@@ -1,15 +1,15 @@
 import React from 'react';
-import {getAllPosts} from "@/service/posts/posts";
+import { getFeaturedPosts} from "@/service/posts/posts";
 import Posts from "@/components/posts/Posts";
 
 
 
 async function FeaturedPosts() {
-    const posts = await getAllPosts();
+    const posts = await getFeaturedPosts();
     return (
         <section>
             <h2 className="ml-4 text-2xl font-bold">Featured Posts</h2>
-            <Posts posts={posts.filter(post => post.featured)}/>
+            <Posts posts={posts}/>
         </section>
     );
 }

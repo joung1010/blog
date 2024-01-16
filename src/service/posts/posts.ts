@@ -14,11 +14,11 @@ export type PostData = Post & { content: string; };
 export const ALL_CATEGORY = 'All posts';
 
 export async function getFeaturedPosts(): Promise<Post[]> {
-    const posts = await readPosts();
-    return posts.filter(post => post.featured);
+    return getAllPosts()
+        .then(posts => posts.filter(post => post.featured));
 }
 
-export async function getAllPosts():Promise<Post[]> {
+export async function getAllPosts(): Promise<Post[]> {
     return await readPosts();
 }
 
