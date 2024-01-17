@@ -12,7 +12,7 @@ function Posts({posts}: Props) {
             {
                 posts?.map((post, index) => (
                     <li key={post.path}
-                        className="rounded-lg shadow-md overflow-hidden cursor-pointer transition-all hover:scale-105"
+                        className="rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-all hover:scale-105"
                     >
                         <PostCard key={index} post={post}/>
                     </li>

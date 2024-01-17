@@ -9,7 +9,7 @@ export default function Profile() {
     * Image 태그 priority 속성 우선적으로 다운로드
     * */
     return (
-        <section className="text-center">
+        <section className="text-center my-4">
             <Image className="mx-auto rounded-full"
                    priority
                    src={profile} alt="profile" width={250} height={250}/>

@@ -10,7 +10,7 @@ export default async function Home() {
         <section>
             <Profile/>
             <FeaturedPosts/>
-            <PostSlider posts={posts}/>
+            <PostSlider/>
         </section>
     )
 }
