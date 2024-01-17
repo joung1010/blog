@@ -20,7 +20,7 @@ function PostsSideNav({categories, selected, onClick}: Props) {
                         <li key={category}
                             id={category}
                             onClick={handleOnclick}
-                            className={category === selected ? 'my-1 font-medium cursor-pointer hover:text-cyan-400 text-cyan-400' : 'my-1 font-medium cursor-pointer hover:text-cyan-400'}
+                            className={`my-1 font-medium cursor-pointer ${category === selected ? 'hover:text-cyan-400 text-cyan-400' : 'hover:text-cyan-400'}`}
                         >
                             {category}
                         </li>
