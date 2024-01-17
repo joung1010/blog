@@ -11,7 +11,7 @@ export type Post = {
 };
 export type PostData = Post & { content: string; };
 
-export const ALL_CATEGORY = 'All posts';
+
 
 export async function getFeaturedPosts(): Promise<Post[]> {
     return getAllPosts()

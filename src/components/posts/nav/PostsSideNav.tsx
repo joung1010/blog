@@ -6,8 +6,6 @@ type Props = {
     selected: string;
     onClick: (category: string) => void
 }
-
-const BASIC_NAV_CSS = 'my-1 font-medium cursor-pointer hover:text-cyan-400';
 function PostsSideNav({categories, selected, onClick}: Props) {
     const handleOnclick = (e: SyntheticEvent) => {
         const category = e.currentTarget.textContent;
@@ -19,7 +17,7 @@ function PostsSideNav({categories, selected, onClick}: Props) {
             <ul className='my-4 text-xl flex flex-col items-center'>
                 {
                     categories?.map((category, index) => (
-                        <li key={index}
+                        <li key={category}
                             id={category}
                             onClick={handleOnclick}
                             className={category === selected ? 'my-1 font-medium cursor-pointer hover:text-cyan-400 text-cyan-400' : 'my-1 font-medium cursor-pointer hover:text-cyan-400'}
